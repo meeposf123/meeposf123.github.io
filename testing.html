@@ -2,7 +2,7 @@
 <script>
 function fbFrameLoaded() {
   var iframeEl = document.getElementById('fbframe');
-  var message = {"xdArbiterHandleMessage":true,"message":{"method":"loginButtonStateInit","params":JSON.stringify({'call':{'id':'123','url':'www.facebook.com','size':{'width':10,'height':10},'dims':{'screenX':0,'screenY':23,'outerWidth':1680,'outerHeight':971,'screenWidth':1680}}})},"origin":"ORIGIN"};
+  var message = {"xdArbiterHandleMessage":true,"message":{"method":"loginButtonStateInit","params":JSON.stringify({'call':{'id':'123','url':'data://www.facebook.com','size':{'width':10,'height':10},'dims':{'screenX':0,'screenY':23,'outerWidth':1680,'outerHeight':971,'screenWidth':1680}}})},"origin":"ORIGIN"};
   iframeEl.contentWindow.postMessage(message, '*');
 };
 </script>
