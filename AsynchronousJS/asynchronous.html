@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Asynchronous JavaScript</title>
+</head>
+<body>
+    <h1>Asynchronous JavaScript</h1>
+    <script>
+
+    // Old way of Asynchronous
+    // setTimeout(() => {
+    //   console.log('LOL1');
+    //   setTimeout(() => {
+    //     console.log('LOL1');
+    //     setTimeout(() => {
+    //       console.log('LOL1');
+    //     }, 2000);
+    //   }, 2000);
+    // }, 2000);
+
+    // then catch way of Asynchronous
+    //     let temp = new Promise((resolve, reject) =>{
+    //       setTimeout(() => {
+    //         resolve([2, 3, 1]);
+    //       }, 2000);
+    //     });
+    //
+    //     let temp1 = () =>{
+    //       return new Promise((resolve, reject) =>{
+    //       setTimeout(() => {
+    //         resolve('Returning');
+    //       }, 2000);
+    //     });
+    //   }
+    //   let temp2 = () =>{
+    //     return new Promise((resolve, reject) =>{
+    //     setTimeout(() => {
+    //       reject('Third Promise Returned');
+    //     }, 2000);
+    //   });
+    // }
+
+    // temp.then((ids) => {
+    //   console.log(ids + ' resolver');
+    //   return temp1();
+    // })
+    // .then(arg => {
+    //   console.log(arg + ' resolver');
+    //   return temp2();
+    // })
+    // .then(str => {
+    //   console.log(str);
+    // })
+    // .catch(error => {
+    //   console.log(error + ' catch block');
+    // });
+
+
+    // async await way of Asynchronous
+    // async function fun(){
+    //   const temp3 = await temp;
+    //   console.log('was waiting ' + temp3);
+    //   const temp4 = await temp1();
+    //   console.log('was waiting ' + temp4);
+    //   return temp2();
+    // }
+    // fun().then((temp) => {
+    //   console.log(temp);
+    // })
+    // .catch(error => {
+    //   console.log(error);
+    // });
+
+    // fetch('https://cors-anywhere.herokuapp.com/https://www.metaweather.com/api/location/2211096/')
+    // .then(response => {
+    //   return response.json();
+    // })
+    // .then(json => {
+    //   console.log(json);
+    //   json.consolidated_weather.forEach(curr => {
+    //     console.log(`On ${curr.applicable_date}, there is ${curr.weather_state_name}`);
+    //   });
+    // })
+    // .catch(err => {
+    //   console.log(err);
+    // });
+
+
+    async function karachi5DaysWeather(){
+      let response = await fetch('https://cors-anywhere.herokuapp.com/https://www.metaweather.com/api/location/2211096/')
+      let json = await response.json();
+      json.consolidated_weather.forEach(curr => {
+          console.log(`On ${curr.applicable_date}, there is ${curr.weather_state_name}`);
+        });
+    }
+    karachi5DaysWeather();
+    
+    </script>
+</body>
+</html>
